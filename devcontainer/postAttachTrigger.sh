@@ -10,7 +10,7 @@ chmod +x $workspace_dir/.devcontainer/*.sh
 # Sync workspace materials
 # -----------------------
 
-exec "$workspace_dir/.devcontainer/sync.sh"
+$workspace_dir/.devcontainer/sync.sh
 
 # -----------------------
 # Run synced postAttachScript
