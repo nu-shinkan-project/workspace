@@ -3,7 +3,7 @@ script_dir=$(cd "$(dirname "$0")" && pwd)
 workspace_dir=$(cd "$script_dir/.." && pwd)
 
 repository_url="https://github.com/nu-shinkan-project/workspace.git"
-repository_ref="refs/heads/main"
+repository_ref="refs/heads/development-environment"
 
 # -----------------------
 # Check for workspace updates

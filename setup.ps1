@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop'
 
 $workspaceDirectory = if ($env:WORKSPACE_DIRECTORY) { $env:WORKSPACE_DIRECTORY } else { 'nu-shinkan-workspace' }
 $repositoryUrl = if ($env:WORKSPACE_REPOSITORY_URL) { $env:WORKSPACE_REPOSITORY_URL } else { 'https://github.com/nu-shinkan-project/workspace.git' }
-$repositoryRef = if ($env:WORKSPACE_REPOSITORY_REF) { $env:WORKSPACE_REPOSITORY_REF } else { 'refs/heads/main' }
+$repositoryRef = if ($env:WORKSPACE_REPOSITORY_REF) { $env:WORKSPACE_REPOSITORY_REF } else { 'refs/heads/development-environment' }
 
 # -----------------------
 # Create workspace

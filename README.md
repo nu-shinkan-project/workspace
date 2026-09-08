@@ -10,7 +10,7 @@ Git 管理対象外の `nu-shinkan-workspace` ディレクトリを作成し、�
 ## Windows
 
 ```powershell
-irm https://raw.githubusercontent.com/nu-shinkan-project/workspace/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/nu-shinkan-project/workspace/development-environment/setup.ps1 | iex
 ```
 
 実行ポリシーで失敗する場合は、同じ PowerShell セッションで
@@ -21,7 +21,7 @@ irm https://raw.githubusercontent.com/nu-shinkan-project/workspace/main/setup.ps
 `git`、`curl`、`unzip` が必要です。
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/nu-shinkan-project/workspace/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/nu-shinkan-project/workspace/development-environment/setup.sh | bash
 ```
 
 ## 動作
