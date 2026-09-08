@@ -77,4 +77,7 @@ if [ "$local_revision" != "$latest_revision" ]; then
 
   # clean up unnecessary material
   rm -f "$workspace_dir/.devcontainer/auto-clone.ps1"
+
+  # Make scripts runnable
+  chmod +x $workspace_dir/.devcontainer/*.sh
 fi
