@@ -2,4 +2,4 @@
 script_dir=$(cd "$(dirname "$0")" && pwd)
 workspace_dir=$(cd "$script_dir/.." && pwd)
 
-exec "$workspace_dir/.devcontainer/postCreateScript.nu-shinkan.sh"
+$workspace_dir/.devcontainer/postCreateScript.nu-shinkan.sh
