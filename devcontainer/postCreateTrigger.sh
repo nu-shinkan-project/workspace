@@ -16,4 +16,4 @@ $workspace_dir/.devcontainer/sync.sh
 # Run synced postCreateScript
 # -----------------------
 
-exec "$workspace_dir/.devcontainer/postCreateScript.sh"
+$workspace_dir/.devcontainer/postCreateScript.sh
