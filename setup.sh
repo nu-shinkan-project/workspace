@@ -3,7 +3,7 @@ set -euo pipefail
 
 workspace_dir="${WORKSPACE_DIRECTORY:-nu-shinkan-workspace}"
 repository_url="${WORKSPACE_REPOSITORY_URL:-https://github.com/nu-shinkan-project/workspace.git}"
-repository_ref="${WORKSPACE_REPOSITORY_REF:-refs/heads/main}"
+repository_ref="${WORKSPACE_REPOSITORY_REF:-refs/heads/development-environment}"
 
 # -----------------------
 # Create workspace
