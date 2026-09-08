@@ -16,4 +16,4 @@ $workspace_dir/.devcontainer/sync.sh
 # Run synced postAttachScript
 # -----------------------
 
-exec "$workspace_dir/.devcontainer/postAttachScript.sh"
+$workspace_dir/.devcontainer/postAttachScript.sh
