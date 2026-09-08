@@ -68,6 +68,12 @@ else
 fi
 
 # -----------------------
+# Delete unnecessary material
+# -----------------------
+
+rm -f "$devcontainer_target"/*.ps1
+
+# -----------------------
 # Clone repositories
 # -----------------------
 
