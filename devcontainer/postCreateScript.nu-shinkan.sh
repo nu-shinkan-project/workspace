@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd nu-shinkan
+script_dir=$(cd "$(dirname "$0")" && pwd)
+workspace_dir=$(cd "$script_dir/.." && pwd)
+repo_dir="$workspace_dir/nu-shinkan"
+
+cd "$repo_dir"
 
 # ---------------------------
 # git configuration
