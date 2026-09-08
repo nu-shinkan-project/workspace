@@ -8,4 +8,4 @@ workspace_dir=$(cd "$script_dir/.." && pwd)
 # Clone missing repositories
 # -----------------------
 
-exec "$script_dir/auto-clone.sh"
+$script_dir/auto-clone.sh
