@@ -22,10 +22,16 @@ curl -fsSL https://raw.githubusercontent.com/nu-shinkan-project/workspace/main/s
 
 ## 動作
 
-- `devcontainer/repos` の各行は、既定では `nu-shinkan-project` organization 内のリポジトリ名として扱われます。完全な Git URLも指定できます。
-- 空行と `#` で始まる行は無視されます。
-- 同名のファイルまたはディレクトリが既にあれば clone も変更も行いません。
-- attach 時に配布元の commit hash を確認し、更新がある場合だけ `.devcontainer` を同期してから不足しているリポジトリを clone します。
-- clone 済みリポジトリに対する `pull` や変更は行いません。
+### 自動クローン
 
-保存先などは `WORKSPACE_DIRECTORY`、`WORKSPACE_REPOSITORY_URL`、`WORKSPACE_REPOSITORY_REF`、`WORKSPACE_REPOSITORY_ORG` 環境変数で上書きできます。
+セットアップスクリプトは，関連リポジトリを自動でクローンします．
+クローンするリポジトリは，`devcontainer/repos`で改行区切りで指定します．
+
+`devcontainer/repos` の各行は、既定では `nu-shinkan-project` organization 内のリポジトリ名として扱われます．完全な Git URLも指定できます．
+ただし，空行と `#` で始まる行は無視されます。
+
+なお，自動クローンはすでに同名のディレクトリ・またはファイルがない場合のみに行われます．
+
+### 環境更新
+
+devcontainerへの attach 時に配布元の commit hash を確認し、更新がある場合だけ `.devcontainer` を同期します．自動クローンは，不足しているリポジトリを clone します．行われるのは clone のみで，clone 済みリポジトリに対する `pull` や変更は行いません．
