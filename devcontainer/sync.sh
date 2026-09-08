@@ -76,5 +76,5 @@ if [ "$local_revision" != "$latest_revision" ]; then
   rm -rf "$previous_devcontainer"
 
   # clean up unnecessary material
-  rm -f "$workspace_dir/.devcontainer/*.ps1"
+  rm -f "$workspace_dir/.devcontainer/auto-clone.ps1"
 fi
