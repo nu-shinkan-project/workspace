@@ -11,7 +11,7 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
-	"postCreateCommand": "sh .devcontainer/postCreateScript.sh",
+	"postCreateCommand": "sh .devcontainer/postCreateTrigger.sh",
 	"postAttachCommand": "sh .devcontainer/postAttachTrigger.sh"
 
 	// Configure tool-specific properties.
