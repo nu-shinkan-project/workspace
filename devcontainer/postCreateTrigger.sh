@@ -4,7 +4,7 @@ set -euo pipefail
 script_dir=$(cd "$(dirname "$0")" && pwd)
 workspace_dir=$(cd "$script_dir/.." && pwd)
 
-chmod +x "$workspace_dir/.devcontainer/*.sh"
+chmod +x $workspace_dir/.devcontainer/*.sh
 
 # -----------------------
 # Sync workspace materials
