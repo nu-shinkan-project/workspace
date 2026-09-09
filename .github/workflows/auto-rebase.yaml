@@ -1,0 +1,52 @@
+name: Auto Rebase Branches
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  rebase:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false # いずれかのブランチが失敗しても、他のブランチの処理を継続する
+      matrix:
+        target-branch:
+          - feature-A
+          - feature-B
+          - staging
+          # ↑ ここにリベースしたいブランチをリスト形式で並べるだけ（1箇所）
+
+    steps:
+      - name: Checkout target branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.target-branch }}
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Rebase onto main and push
+        run: |
+          git fetch origin main
+          git rebase origin/main
+          git push --force-with-lease origin ${{ matrix.target-branch }}
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::[Auto-Rebase Failed] コンフリクト等のため ${{ matrix.target-branch }} の自動リベースに失敗しました。手動でリベースを実行してください。"
+          echo ""
+          echo "=========================================="
+          echo " 手動リベースの手順 (${{ matrix.target-branch }}):"
+          echo " 1. git checkout ${{ matrix.target-branch }}"
+          echo " 2. git fetch origin"
+          echo " 3. git rebase origin/main"
+          echo " 4. # コンフリクト解消後: git add <files> && git rebase --continue"
+          echo " 5. git push --force-with-lease origin ${{ matrix.target-branch }}"
+          echo "=========================================="
