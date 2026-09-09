@@ -14,10 +14,7 @@ jobs:
       fail-fast: false # いずれかのブランチが失敗しても、他のブランチの処理を継続する
       matrix:
         target-branch:
-          - feature-A
-          - feature-B
-          - staging
-          # ↑ ここにリベースしたいブランチをリスト形式で並べるだけ（1箇所）
+          - development-environment
 
     steps:
       - name: Checkout target branch
